@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--显示一行字符串-->
+{{ string }}
+
+<br/>
+<!--for循环和List内容的显示-->
+教程列表：
+<ul>
+{% for i in TutorialList %}
+    <li>{{ i }}</li>
+{% empty %}
+    <li>抱歉，列表为空</li>
+{% endfor %}
+</ul>
+
+<br/>
+<!--遍历字典-->
+{% for key, value in info_dict.items %}
+    {{ key }}: {{ value }}
+{% endfor %}
+
+<br/>
+<!--是否循环到最后一个元素-->
+{% for item in List %}
+    {{ item }}{% if not forloop.last%},{% endif %}
+{% endfor %}
+
+<br/>
+<!--逻辑操作-->
+{% if var >= 90 %}
+成绩优秀，自强学堂你没少去吧！学得不错
+{% elif var >= 80 %}
+成绩良好
+{% elif var >= 70 %}
+成绩一般
+{% elif var >= 60 %}
+需要努力
+{% else %}
+不及格啊，大哥！多去自强学堂学习啊！
+{% endif %}
+
+<br/>
+<!--获取当前用户-->
+{{ request.user }}
+
+<br/>
+<!--获取当前网址-->
+{{ request.path }}
+
+<br/>
+<!--获取当前 GET 参数-->
+{{ request.GET }}
+
+</body>
+</html>
