@@ -11,6 +11,10 @@ print(7 ^ 1)
 
 
 #iteritems
-my_map = {'a': 1, "b": 2, "c": 3}
+my_map = {'a': 1, "b": 2, "c": 3, "d": 4}
 for v, k in my_map.iteritems():
     print(v, k)
+
+
+for x in xrange(1, 2):
+    print('---%d' % x)
